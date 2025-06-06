@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: ma3tfi356-go
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: ma3tfi356-go 
+  name: ma3tfi356-go
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: ma3tfi356-go
+    weight: 100 
